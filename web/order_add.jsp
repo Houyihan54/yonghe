@@ -23,12 +23,12 @@
 
 <h2>新增订单</h2>
 <hr/>
-<form action="orderAdd" method="POST">
+<form action="/orderAdd" method="POST">
 	<table border="1">
 		<tr>
 			<td width="30%">所属门店</td>
 			<td>
-				<select name="doorId">
+				<select name="door_id">
 					<option value="">永和大王(北三环西路店)</option>
 				</select>
 			</td>
@@ -36,13 +36,13 @@
 		<tr>
 			<td>订单编号</td>
 			<td>
-				<input type="text" name="orderNo"/>
+				<input type="text" name="order_no"/>
 			</td>
 		</tr>
 		<tr>
 			<td>订单类型</td>
 			<td>
-				<input type="text" name="orderType" 
+				<input type="text" name="order_type"
 						value="堂食"/>
 			</td>
 		</tr>
@@ -62,7 +62,7 @@
 		<tr>
 			<td>支付方式</td>
 			<td>
-				<input type="text" name="payType"
+				<input type="text" name="pay_type"
 						value="微支付"/>
 				
 			</td>

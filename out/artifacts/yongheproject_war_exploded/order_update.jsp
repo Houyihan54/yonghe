@@ -23,67 +23,67 @@
 
 <h2>修改订单</h2>
 <hr/>
-<form action="orderUpdate" method="POST">
+<form action="${pageContext.request.contextPath}orderUpdate" method="POST">
 	<!-- hidden隐藏域,在提交表单时连order.id一起提交 -->
-	<input type="hidden" name="id" value=""/>
+	<input type="hidden" name="id" value="${order.id}"/>
 	<table border="1">
 		<tr>
 			<td width="30%">所属门店</td>
 			<td>
-				<select id="doorId" name="doorId">
-					<option value="">永和大王(北三环西路店)</option>
+				<select id="doorId" name="door_id">
+					<option value="${order.door_id}">永和大王(北三环西路店)</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
 			<td>订单编号</td>
 			<td>
-				<input type="text" name="orderNo" 
-						value=""/>
+				<input type="text" name="order_no"
+						value="${order.order_no}"/>
 			</td>
 		</tr>
 		<tr>
 			<td>订单类型</td>
 			<td>
-				<input type="text" name="orderType" 
-						value=""/>
+				<input type="text" name="order_type"
+						value="${order.order_type}"/>
 			</td>
 		</tr>
 		<tr>
 			<td>用餐人数</td>
 			<td>
 				<input type="text" name="pnum" 
-						value=""/>
+						value="${order.pnum}"/>
 			</td>
 		</tr>
 		<tr>
 			<td>收银员</td>
 			<td>
 				<input type="text" name="cashier" 
-						value=""/>
+						value="${order.cashier}"/>
 			</td>
 		</tr>
 		<tr>
 			<td>下单时间</td>
 			<td>
-				<input type="text" name="orderTime" 
-						value=''/>
+				<input type="text" name="order_time"
+						value='${order.order_time}'/>
 					
 			</td>
 		</tr>
 		<tr>
 			<td>结账时间</td>
 			<td>
-				<input type="text" name="orderTime" 
-						value=''/>
+				<input type="text" name="pay_time"
+						value='${order.pay_time}'/>
 					
 			</td>
 		</tr>
 		<tr>
 			<td>支付方式</td>
 			<td>
-				<input type="text" name="payType"
-						value=""/>
+				<input type="text" name="pay_type"
+						value="${order.pay_type}"/>
 				
 			</td>
 		</tr>
@@ -91,7 +91,7 @@
 			<td>支付金额</td>
 			<td>
 				<input type="text" name="price"
-						value=""/>
+						value="${order.price}"/>
 			</td>
 		</tr>
 		<tr>

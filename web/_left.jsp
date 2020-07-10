@@ -16,7 +16,7 @@
 		<a href="${pageContext.request.contextPath}/doorList" target="rightFrame">› 门店管理</a>
 	</div>
 	<div class="menu-bar">
-		<a href="orderList" target="rightFrame">› 订单管理</a>
+		<a href="${pageContext.request.contextPath}/orderList" target="rightFrame">› 订单管理</a>
 	</div>
 </body>
 </html>

@@ -31,7 +31,7 @@
 <body>
 	<h2>订单管理</h2>
 	<div id="add-order">
-		<a href="findAllDoorToOrder_add" target="rightFrame">新增订单</a>
+		<a href="order_add.jsp" target="rightFrame">新增订单</a>
 	</div>
 	<hr/>
 	<table border="1">
@@ -49,7 +49,7 @@
 			<th class="width-80">操 作</th>
 		</tr>
 
-	<!-- 模版数据 -->
+	<%--<!-- 模版数据 -->
 	<tr>
 			<td>1</td>
 			<td>永和大王(西直门店)</td>
@@ -59,10 +59,10 @@
 			<td>张三</td>
 			<td>
 				2018-04-26 14:49:07
-				<%-- 
+				&lt;%&ndash;
 				<fmt:formatDate value="${order.orderTime}"
 							pattern="yyyy-MM-dd HH:mm:ss" />
-				 --%>
+				 &ndash;%&gt;
 			</td>
 			<td>
 				2018-04-26 14:49:07
@@ -74,7 +74,28 @@
 				&nbsp;|&nbsp;
 				<a href="orderInfo?id=">修改</a>
 			</td>
-		</tr>
+		</tr>--%>
+
+		<c:forEach items="${list}" var="order" varStatus="status">
+			<tr>
+				<td>${status.count}</td>
+				<td>${order.door_id}</td>
+				<td>${order.order_no}</td>
+				<td>${order.order_type}</td>
+				<td>${order.pnum}</td>
+				<td>${order.cashier}</td>
+				<td>${order.order_time}</td>
+				<td>${order.pay_time}</td>
+				<td>${order.pay_type}</td>
+				<td>${order.price}</td>
+				<td>
+					<a href="${pageContext.request.contextPath}orderDelete?id=${order.id}">删除</a>
+					&nbsp;|&nbsp;
+					<a href="${pageContext.request.contextPath}orderFindById?id=${order.id}">修改</a>
+				</td>
+
+			</tr>
+		</c:forEach>
 </table>
 
 </body><!-- body-end  -->
