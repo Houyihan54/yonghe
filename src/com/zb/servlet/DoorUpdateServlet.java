@@ -27,7 +27,7 @@ public class DoorUpdateServlet extends HttpServlet {
         door.setName(name);
         door.setId(id);
         try {
-            new DoorDao().updadteDoor(door);
+            new DoorDao().updateDoor(door);
         } catch (SQLException e) {
             e.printStackTrace();
         }

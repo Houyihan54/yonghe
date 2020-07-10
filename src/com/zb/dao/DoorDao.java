@@ -72,7 +72,7 @@ public class DoorDao {
         return door;
     }
 
-    public void updadteDoor(Door door)throws SQLException{
+    public void updateDoor(Door door)throws SQLException{
         Connection conn = DBUtils.getConnectionByDatasource();
         String sql = "update tb_door set name=?,tel=?,addr=? where id=?";
         PreparedStatement ps = conn.prepareStatement(sql);
