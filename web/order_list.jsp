@@ -79,7 +79,7 @@
 		<c:forEach items="${list}" var="order" varStatus="status">
 			<tr>
 				<td>${status.count}</td>
-				<td>${order.door_id}</td>
+				<td>${order.order_id}</td>
 				<td>${order.order_no}</td>
 				<td>${order.order_type}</td>
 				<td>${order.pnum}</td>
