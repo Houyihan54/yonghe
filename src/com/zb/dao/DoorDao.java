@@ -50,6 +50,27 @@ public class DoorDao {
         ps.executeUpdate();
         DBUtils.close(conn);
     }
+    public Door findById(Integer id){
+        Connection conn = DBUtils.getConnectionByDatasource();
+        String sql = "select * from tb_door where id=?";
+        Door door = new Door();
+        try {
+            PreparedStatement ps =conn.prepareStatement(sql);
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                door.setId(rs.getInt("id"));
+                door.setName(rs.getString("name"));
+                door.setTel(rs.getString("tel"));
+                door.setAddr(rs.getString("addr"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DBUtils.close(conn);
+        }
+        return door;
+    }
 
     public void updadteDoor(Door door)throws SQLException{
         Connection conn = DBUtils.getConnectionByDatasource();

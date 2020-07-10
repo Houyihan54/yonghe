@@ -15,10 +15,12 @@ import java.sql.SQLException;
 public class DoorUpdateServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("id"));
+        Integer id = Integer.parseInt(req.getParameter("id"));
+        // 接收jsp页面传值
         String name=req.getParameter("name");
         String tel = req.getParameter("tel");
         String addr = req.getParameter("addr");
+        // 封装传入实体化door对象中
         Door door = new Door();
         door.setAddr(addr);
         door.setTel(tel);

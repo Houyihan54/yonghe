@@ -56,7 +56,7 @@
 	<td>
 	<a href="doorDelete?id=${door.id}">删除</a>
 	&nbsp;|&nbsp;
-	<a href="door_update.jsp?id=${door.id}">修改</a>
+	<a href="${pageContext.request.contextPath}doorFindById?id=${door.id}">修改</a>
 	</td>
 
 	</tr>
